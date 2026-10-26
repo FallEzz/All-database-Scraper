@@ -14,3 +14,4 @@ Setiap fitur dipisahkan ke dalam masing-masing folder agar rapi dan mudah dicari
 | 📁 [`cantarella-ai-python/`](./cantarella-ai-python) | `chatbot.py`, `app.py` | Client & Web Server **Cantarella - Ai** versi **Python** (Multi-Provider: OpenRouter Venice, Groq, Pollinations AI). |
 | 📁 [`whatsapp-autoai-pv/`](./whatsapp-autoai-pv) | `autoai_pv.js` | Modul **Auto-AI Private Chat (DM)** untuk Bot WhatsApp dengan persona **Cantarella - Ai** menggunakan Pollinations AI. |
 | 📁 [`quran-nu-scraper/`](./quran-nu-scraper) | `quran_nu_scraper.js` | Scraper lengkap **Quran NU Online** (`https://quran.nu.or.id/`): **Surah, Juz, Urutan Turun, Tahlil, Doa, Wirid, Maulid, Hadits, & Jadwal Sholat**. |
+| 📁 [`jkt48-scraper/`](./jkt48-scraper) | `jkt48_scraper.js` | Scraper lengkap **JKT48 Official** (`https://jkt48.com/`): **Member Aktif/Ex, Detail Profil & Jikoshoukai, News, Jadwal Teater, Kalender Event, Setlist, & Now Live (IDN/Showroom)**. |
