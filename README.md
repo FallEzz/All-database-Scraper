@@ -13,3 +13,4 @@ Setiap fitur dipisahkan ke dalam masing-masing folder agar rapi dan mudah dicari
 | 📁 [`cantarella-ai-nodejs/`](./cantarella-ai-nodejs) | `chatbot.js`, `server.js` | Client & Web Server **Cantarella - Ai** versi **Node.js** (Multi-Provider: OpenRouter Venice, Groq, Pollinations AI). |
 | 📁 [`cantarella-ai-python/`](./cantarella-ai-python) | `chatbot.py`, `app.py` | Client & Web Server **Cantarella - Ai** versi **Python** (Multi-Provider: OpenRouter Venice, Groq, Pollinations AI). |
 | 📁 [`whatsapp-autoai-pv/`](./whatsapp-autoai-pv) | `autoai_pv.js` | Modul **Auto-AI Private Chat (DM)** untuk Bot WhatsApp dengan persona **Cantarella - Ai** menggunakan Pollinations AI. |
+| 📁 [`quran-nu-scraper/`](./quran-nu-scraper) | `quran_nu_scraper.js` | Scraper lengkap **Quran NU Online** (`https://quran.nu.or.id/`): **Surah, Juz, Urutan Turun, Tahlil, Doa, Wirid, Maulid, Hadits, & Jadwal Sholat**. |
