@@ -1,6 +1,88 @@
 // ============================================================================
-// FITUR AUTO-AI PRIVATE CHAT (DM) WHATSAPP - CANTARELLA - AI
-// Provider: Pollinations AI (No API Key / Free)
+// SOLUSI 1 (PALING DIREKOMENDASIKAN):
+// Cari fungsi `async function groqChat(...)` di script bot kamu, lalu TIMPA
+// dengan fungsi `groqChat` di bawah ini.
+// Dengan cara ini, SEMUA fitur AI (Grup, Private Chat, maupun Command AI)
+// otomatis pindah ke Pollinations AI (TANPA API KEY) dan bernama Cantarella - Ai!
+// ============================================================================
+
+async function groqChat(prompt, opts) {
+    opts = opts || {};
+    var rawMessages = Array.isArray(opts.messages) && opts.messages.length
+        ? opts.messages
+        : [{ role: 'user', content: String(prompt || '') }];
+
+    var messages = rawMessages.map(function (m) {
+        var c = String(m.content || '').replace(/elaina|elaine|ᴇʟᴀɪɴ[ᴇᴀ]/gi, 'Cantarella - Ai');
+        if (m.role === 'system') {
+            c = 'IDENTITAS WAJIB: Nama kamu adalah "Cantarella - Ai" (JANGAN PERNAH menyebut dirimu Elaina atau nama lain. Jika ditanya siapa namamu, jawab tegas bahwa namamu adalah Cantarella - Ai).\n\n' + c;
+        }
+        return { role: m.role || 'user', content: c };
+    });
+
+    var endpoints = [
+        { url: 'https://text.pollinations.ai/', model: 'openai-fast' },
+        { url: 'https://text.pollinations.ai/openai', model: 'openai-fast' }
+    ];
+
+    for (var i = 0; i < endpoints.length; i++) {
+        try {
+            var ctrl = new AbortController();
+            var tId = setTimeout(function () { ctrl.abort(); }, 25000);
+            var res = await fetch(endpoints[i].url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'User-Agent': 'Mozilla/5.0'
+                },
+                body: JSON.stringify({
+                    model: endpoints[i].model,
+                    messages: messages,
+                    private: true
+                }),
+                signal: ctrl.signal
+            });
+            clearTimeout(tId);
+            if (!res.ok) continue;
+
+            var txt = await res.text();
+            var reply = txt;
+            try {
+                var j = JSON.parse(txt);
+                if (j && j.error) continue;
+                reply = (j.choices && j.choices[0] && j.choices[0].message && j.choices[0].message.content) || j.text || txt;
+            } catch (e) {}
+
+            reply = String(reply || '')
+                .replace(/\n*---\n*\*?Support Pollinations\.AI[\s\S]*$/i, '')
+                .replace(/\bElaina\b/gi, 'Cantarella - Ai')
+                .trim();
+
+            if (reply) return reply;
+        } catch (e) {}
+    }
+
+    try {
+        var sysMsg = messages.find(function (m) { return m.role === 'system'; });
+        var sysText = sysMsg ? sysMsg.content.slice(0, 600) : 'Nama kamu adalah Cantarella - Ai.';
+        var userText = String(prompt || (messages[messages.length - 1] && messages[messages.length - 1].content) || 'Halo');
+        var getUrl = 'https://text.pollinations.ai/' + encodeURIComponent(userText) + '?model=openai-fast&system=' + encodeURIComponent(sysText);
+        var resGet = await fetch(getUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } });
+        if (resGet.ok) {
+            var txtGet = (await resGet.text())
+                .replace(/\n*---\n*\*?Support Pollinations\.AI[\s\S]*$/i, '')
+                .replace(/\bElaina\b/gi, 'Cantarella - Ai')
+                .trim();
+            if (txtGet) return txtGet;
+        }
+    } catch (e) {}
+
+    return '';
+}
+
+
+// ============================================================================
+// SOLUSI 2: BLOK `if (_aiTriggerPv)` UNTUK PRIVATE CHAT
 // ============================================================================
 
 if (_aiTriggerPv) {
@@ -75,8 +157,7 @@ if (_aiTriggerPv) {
 
                 const _endpoints = [
                     { url: 'https://text.pollinations.ai/', model: 'openai-fast' },
-                    { url: 'https://text.pollinations.ai/openai', model: 'openai-fast' },
-                    { url: 'https://text.pollinations.ai/', model: 'openai' }
+                    { url: 'https://text.pollinations.ai/openai', model: 'openai-fast' }
                 ];
 
                 let _pvText = '';
@@ -84,7 +165,7 @@ if (_aiTriggerPv) {
                     const _ep = _endpoints[_i];
                     try {
                         const _ctrl = new AbortController();
-                        const _tId = setTimeout(function () { _ctrl.abort(); }, 35000);
+                        const _tId = setTimeout(function () { _ctrl.abort(); }, 25000);
 
                         const _res = await fetch(_ep.url, {
                             method: 'POST',
@@ -132,9 +213,20 @@ if (_aiTriggerPv) {
                         if (_pvText) {
                             break;
                         }
-                    } catch (_modelErr) {
-                        console.warn('[AIChat PV] gagal:', _modelErr && _modelErr.message ? _modelErr.message : _modelErr);
-                    }
+                    } catch (_modelErr) {}
+                }
+
+                if (!_pvText) {
+                    try {
+                        const _getUrl = 'https://text.pollinations.ai/' + encodeURIComponent(_rawBody) + '?model=openai-fast&system=' + encodeURIComponent(_pvSys.slice(0, 600));
+                        const _resGet = await fetch(_getUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } });
+                        if (_resGet.ok) {
+                            _pvText = (await _resGet.text())
+                                .replace(/\n*---\n*\*?Support Pollinations\.AI[\s\S]*$/i, '')
+                                .replace(/\bElaina\b/gi, 'Cantarella - Ai')
+                                .trim();
+                        }
+                    } catch (_getErr) {}
                 }
 
                 if (_pvText) {
