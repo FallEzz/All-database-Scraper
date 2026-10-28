@@ -1,0 +1,128 @@
+[
+  {
+    "key": "layoutA",
+    "name": "Layout A",
+    "thumbnail": "/assets/layouts/layout_A.webp",
+    "thumbnailUrl": "https://photobooth-io.cc/assets/layouts/layout_A.webp",
+    "capturePage": "/canvas.html",
+    "customizePage": "/customize.html",
+    "photoCount": 3
+  },
+  {
+    "key": "layoutC",
+    "name": "Layout C",
+    "thumbnail": "/assets/layouts/layout_C.webp",
+    "thumbnailUrl": "https://photobooth-io.cc/assets/layouts/layout_C.webp",
+    "capturePage": "/canvas2.html",
+    "customizePage": "/customize.html",
+    "photoCount": 2
+  },
+  {
+    "key": "layoutD",
+    "name": "Layout D",
+    "thumbnail": "/assets/layouts/layout_D.webp",
+    "thumbnailUrl": "https://photobooth-io.cc/assets/layouts/layout_D.webp",
+    "capturePage": "/canvas6.html",
+    "customizePage": "/customize6.html",
+    "photoCount": 6
+  },
+  {
+    "key": "heartsFilter",
+    "name": "Hearts Filter",
+    "thumbnail": "/assets/layouts/hearts_filter.webp",
+    "thumbnailUrl": "https://photobooth-io.cc/assets/layouts/hearts_filter.webp",
+    "capturePage": "/hearts-layout.html",
+    "customizePage": "/customize.html",
+    "photoCount": 4
+  },
+  {
+    "key": "dogFilter",
+    "name": "Dog Filter",
+    "thumbnail": "/assets/layouts/dog_filter.webp",
+    "thumbnailUrl": "https://photobooth-io.cc/assets/layouts/dog_filter.webp",
+    "capturePage": "/dog-filter-layout.html",
+    "customizePage": "/customize.html",
+    "photoCount": 4
+  },
+  {
+    "key": "classic",
+    "name": "Classic Layout",
+    "thumbnail": "/assets/layouts/classic_layout.webp",
+    "thumbnailUrl": "https://photobooth-io.cc/assets/layouts/classic_layout.webp",
+    "capturePage": "/classic-layout/index.html",
+    "customizePage": "/classic-customize/index.html",
+    "photoCount": 4
+  },
+  {
+    "key": "vintage",
+    "name": "Vintage Layout",
+    "thumbnail": "/assets/layouts/vintage_layout.webp",
+    "thumbnailUrl": "https://photobooth-io.cc/assets/layouts/vintage_layout.webp",
+    "capturePage": "/vintage-layout/index.html",
+    "customizePage": "/vintage-customize/index.html",
+    "photoCount": 4
+  },
+  {
+    "key": "solace",
+    "name": "Solace Layout",
+    "thumbnail": "/assets/layouts/solace_layout.webp",
+    "thumbnailUrl": "https://photobooth-io.cc/assets/layouts/solace_layout.webp",
+    "capturePage": "/solace-layout/index.html",
+    "customizePage": "/solace-customize/index.html",
+    "photoCount": 3
+  },
+  {
+    "key": "withLove",
+    "name": "With Love Layout",
+    "thumbnail": "/assets/layouts/with_love_layout.webp",
+    "thumbnailUrl": "https://photobooth-io.cc/assets/layouts/with_love_layout.webp",
+    "capturePage": "/with-love/index.html",
+    "customizePage": "/with-love-customize/index.html",
+    "photoCount": 4
+  },
+  {
+    "key": "holidays",
+    "name": "Holidays Layout",
+    "thumbnail": "/assets/layouts/holidays_layout.webp",
+    "thumbnailUrl": "https://photobooth-io.cc/assets/layouts/holidays_layout.webp",
+    "capturePage": "/holiday-special/index.html",
+    "customizePage": "/holiday-special-customize/index.html",
+    "photoCount": 4
+  },
+  {
+    "key": "layoutE",
+    "name": "Layout E",
+    "thumbnail": "/assets/layouts/layout_E.webp",
+    "thumbnailUrl": "https://photobooth-io.cc/assets/layouts/layout_E.webp",
+    "capturePage": "/layout-e/index.html",
+    "customizePage": "/customize-layout-e/index.html",
+    "photoCount": 4
+  },
+  {
+    "key": "photoboothio",
+    "name": "Photobooth-io Layout",
+    "thumbnail": "/assets/layouts/photoboothio_layout.webp",
+    "thumbnailUrl": "https://photobooth-io.cc/assets/layouts/photoboothio_layout.webp",
+    "capturePage": "/photoboothio-layout/index.html",
+    "customizePage": "/photoboothio-customize/index.html",
+    "photoCount": 4
+  },
+  {
+    "key": "fgwb",
+    "name": "Knock Knock: Build or Treat",
+    "thumbnail": "/assets/layouts/FGWB.webp",
+    "thumbnailUrl": "https://photobooth-io.cc/assets/layouts/FGWB.webp",
+    "capturePage": "/FGWB/index.html",
+    "customizePage": "/FGWB-Customize/index.html",
+    "photoCount": 4
+  },
+  {
+    "key": "idcard",
+    "name": "Student ID Card",
+    "thumbnail": "/assets/layouts/idcard1.webp",
+    "thumbnailUrl": "https://photobooth-io.cc/assets/layouts/idcard1.webp",
+    "capturePage": "/student-id-card-layout/index.html",
+    "customizePage": "/student-id-card-customize/index.html",
+    "photoCount": 4
+  }
+]
